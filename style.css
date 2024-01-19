@@ -1,0 +1,239 @@
+body {
+  padding: 2%;
+  color: white;
+  background-color: #080808;
+  font-family: "Roboto", sans-serif;
+  font-size: xx-large;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Add a pseudo-element to create a background image for larger screens */
+body::before {
+  content: "";
+  color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background-image: url("./assets/db466169-53d9-4bd7-9f14-94d6dcdefc3e_upscaled.png");
+  background-size: 180%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.7;
+  transition: background-color 0.5s ease;
+}
+/* Set background color for mobile devices */
+@media only screen and (max-width: 600px) {
+  body {
+    background: linear-gradient(
+      109.5deg,
+      rgb(13, 12, 68) 9.4%,
+      rgb(128, 65, 3) 78.4%
+    );
+  }
+  /* Disable the background image for mobile */
+  body::before {
+    background: none;
+  }
+}
+
+.maintitle {
+  margin: 8% auto;
+  text-align: center;
+  font-size: 3rem;
+  letter-spacing: 5px;
+}
+
+/* Style the images */
+img {
+  max-width: 300px;
+  min-width: 200px;
+  margin: 10px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid white;
+  object-fit: cover;
+}
+
+/* Style the sections */
+section {
+  padding: 30px;
+  display: grid;
+
+  place-items: center;
+  align-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.theParagraph {
+  margin: auto; /* Adjust the margin as needed */
+  padding: 20px;
+  text-align: center;
+  color: #fbf9fb;
+  font-size: 1.2rem;
+  max-width: 500px;
+  background-color: rgba(251, 250, 249, 0);
+}
+
+/* Style the logos */
+
+.logos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  margin: 15px;
+  transition: all 1s;
+}
+
+/* Adjust transition delays for a staggered appearance */
+.logo:nth-child(2) {
+  transition-delay: 200ms; /* Delay for 200 milliseconds */
+}
+
+.logo:nth-child(3) {
+  transition-delay: 400ms; /* Delay for 400 milliseconds */
+}
+
+.logo:nth-child(4) {
+  transition-delay: 600ms; /* Delay for 600 milliseconds */
+}
+
+/* Style the hiddenLeft and hiddenRight classes */
+.hiddenLeft {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-10%); /* Adjust the percentage as needed */
+  transition: all 1.5s;
+}
+
+.hiddenRight {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(10%); /* Adjust the percentage as needed */
+  transition: all 2s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(1);
+  transform: translateX(0);
+}
+
+.showVertical {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0) scale(1);
+}
+
+/* Style the closing class */
+.closing {
+  opacity: 0;
+  filter: blur(0);
+  transform: translateY(50%);
+  transition: all 1.5s;
+  margin: 10% 0; /* Adjusted margin for responsiveness */
+}
+
+.closing.showVertical {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: opacity 1.5s, transform 2s;
+}
+
+/* Style the h1 elements */
+h1 {
+  font-size: xx-large;
+  margin: auto;
+  max-width: 700px;
+  transform: scale(1);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  transition: transform 1s, font-size 1s, opacity 1s;
+}
+
+#scrollUpButton {
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
+  z-index: 100;
+  background-color: #080808;
+  color: #fbf9fb;
+  border: none;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#scrollUpButton span {
+  font-size: 15px;
+}
+
+.infinite {
+  animation-iteration-count: infinite;
+}
+/* Mobile Styles *******************************************/
+@media only screen and (max-width: 600px) {
+  body {
+    background: linear-gradient(
+      109.5deg,
+      rgb(9, 8, 73) 9.4%,
+      rgb(224, 77, 3) 78.4%
+    );
+  }
+
+  body::before {
+    background: none; /* Disable the background image for mobile */
+  }
+
+  .maintitle {
+    margin: 8% auto;
+    font-size: 3rem;
+    color: rgb(246, 155, 58);
+    letter-spacing: 5px;
+  }
+
+  img {
+    width: 100px;
+  }
+
+  .theParagraph {
+    margin: 20px auto; /* Adjust the margin as needed */
+    padding: 20px;
+    font-size: 1.2rem;
+    max-width: 80%; /* Adjust the width as needed */
+  }
+
+  .closing {
+    margin: 10% 0;
+    font-size: 1.5rem;
+  }
+
+  #scrollUpButton {
+    width: 70px;
+    height: 70px;
+    bottom: 20px;
+    right: 40px;
+    span {
+      font-size: 15px;
+    }
+  }
+
+  .logo {
+    margin: 15px;
+    img {
+      width: 100px;
+    }
+  }
+}

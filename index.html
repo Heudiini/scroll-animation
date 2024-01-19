@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scrolling Page</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <h1 id="maintitle" class="maintitle">MainTitle</h1>
+    <button
+      id="scrollUpButton"
+      class="scroll-button animate__animated animate__fadeInUp"
+    >
+      <span class="animate__animated animate__heartBeat infinite">Back</span>
+    </button>
+    <div class="scroll-container">
+      <div id="section1" class="theParagraph hiddenRight">
+        <h1>intro</h1>
+        <p class="loremIpsum hiddenRight">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+
+      <section id="section2" class="logos hiddenLeft">
+        <div class="logo hiddenLeft">
+          <img
+            src="./assets/8681490a-a538-4099-9920-6a0b5d7b84f6_upscaled.png"
+            alt=""
+          />
+        </div>
+        <div class="logo hiddenLeft">
+          <img
+            src="./assets/db466169-53d9-4bd7-9f14-94d6dcdefc3e_upscaled.png"
+            alt=""
+          />
+        </div>
+        <div class="logo hiddenLeft">
+          <img
+            src="./assets/DreamShaper_v7_make_the_cosmic_coders_move_2.jpg"
+            alt=""
+          />
+        </div>
+        <div class="logo hiddenLeft">
+          <img
+            src="./assets/e043491f-9dc2-4506-991f-f29d70890e77_upscaled.png"
+            alt="ai"
+          />
+        </div>
+      </section>
+
+      <div id="section3" class="theParagraph hiddenLeft">
+        <h1>Second Title</h1>
+        <p class="loremIpsum hiddenLeft">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+
+      <!-- Placeholder for Section 4 -->
+      <section id="section4" class="theParagraph hiddenRight">
+        <h1>Third Title</h1>
+        <p class="loremIpsum hiddenRight">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </section>
+
+      <!-- Placeholder for Section 5 -->
+      <section id="section5" class="theParagraph hiddenLeft">
+        <h1>Fourth Title</h1>
+        <p class="loremIpsum hiddenLeft">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </section>
+
+      <!-- Placeholder for Section 6 -->
+      <section id="section6" class="logos hiddenRight">
+        <h1>Images</h1>
+        <section class="logos hiddenRight">
+          <!-- Your content for Section 6 goes here -->
+        </section>
+      </section>
+
+      <!-- Placeholder for Section 7 -->
+      <section id="section7" class="theParagraph hiddenRight">
+        <h1>The Last one</h1>
+        <p class="loremIpsum hiddenRight">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </section>
+
+      <!-- Placeholder for Section 8 -->
+      <section id="section8" class="Closing closing showVertical">
+        <h1>Thank You for visiting!</h1>
+      </section>
+    </div>
+    <footer class="py-2">
+      <div class="container">
+        <div class="row mx-auto">
+          <!-- Section 1: Animate.css -->
+          <h5 class="col-md-4 mb-3 mb-md-0 text-center">
+            <span class="text-white">Animations by Animate.css</span>
+          </h5>
+
+          <!-- Section 2: Coder and Year -->
+          <h5 class="col-md-4 mb-3 mb-md-0 text-center text-white">
+            Coded by Author &copy; <span id="currentYear"></span>
+          </h5>
+
+          <!-- Section 3: Social Media Links -->
+          <div class="col-md-4 text-center">
+            <h5 class="text-white">Follow for more</h5>
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item">
+                <a href="#" class="text-white"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" class="text-white"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" class="text-white"><i class="fab fa-github"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Add an event listener to the scroll-up button
+        document
+          .getElementById("scrollUpButton")
+          .addEventListener("click", function () {
+            // Get the main title element
+            const mainTitle = document.querySelector(".maintitle");
+
+            // Scroll to the main title element
+            mainTitle.scrollIntoView({
+              behavior: "smooth",
+            });
+          });
+        // Set current year dynamically
+        document.getElementById("currentYear").textContent =
+          new Date().getFullYear();
+      });
+    </script>
+  </body>
+</html>
